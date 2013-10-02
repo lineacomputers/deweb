@@ -1,222 +1,175 @@
 <!doctype html>
 <html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]> <html class="no-js"> <![endif]-->
 <head>
-    <meta charset="utf-8"><!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+<meta charset="utf-8">
+<title>Documento senza titolo</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+/* ~~ Selettori tag/elemento ~~ */
+ul, ol, dl { /*  A causa delle differenze tra i browser, è buona norma impostare a zero il margine e la spaziatura interna negli elenchi. Per uniformità, potete specificare qui i valori desiderati, oppure nelle voci di elenco (LI, DT, DD) contenute negli elenchi. Tenete presente che le impostazioni effettuate qui verranno applicate a cascata all'elenco .nav a meno che non scegliate di scrivere un selettore più specifico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* La rimozione del margine superiore permette di aggirare il problema che si crea quando i margini possono fuoriuscire dal blocco che li contiene. Il margine inferiore che rimane permetterà di distanziare gli elementi che seguono.  */
+	padding-right: 15px;
+	padding-left: 15px; /* L'aggiunta di una spaziatura ai lati degli elementi contenuti nei blocchi, anziché direttamente nei blocchi stessi, consente di evitare ogni calcolo matematico relativo ai riquadri. Come metodo alternativo si può anche utilizzare un blocco nidificato con spaziatura laterale. */
+}
+a img { /*  Questo selettore rimuove il bordo blu predefinito visualizzato in alcuni browser intorno a un'immagine quando è circondata da un collegamento.   */
+	border: none;
+}
+/* ~~ L'applicazione di stili ai collegamenti del sito deve rispettare questo ordine, compreso il gruppo di selettori che creano l'effetto hover. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /*  A meno che non vogliate personalizzare i collegamenti in un modo molto particolare, è bene applicare la sottolineatura per permetterne una rapida identificazione visiva.  */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /*  Questo gruppo di selettori conferisce alla navigazione tramite tastiera gli stessi effetti hover che si producono quando si usa il mouse.  */
+	text-decoration: none;
+}
+/* ~~ Questo contenitore a larghezza fissa circonda tutti gli altri blocchi ~~ */
+.container {
+	width: 960px;
+	background-color: #FFFFFF;
+	margin: 0 auto; /*  Il valore automatico sui lati, abbinato alla larghezza, produce un layout centrato.  */
+}
+/* ~~ All'intestazione non viene assegnata una larghezza. Estenderà l'intera larghezza del layout.  ~~ */
+header {
+	background-color: #ADB96E;
+}
+/* ~~ Queste sono le colonne del layout. ~~ 
 
-    <title>Metro Mobile Wordpress</title>
-    <meta content="Your meta description" name="description">
-    <meta content="No HTML is allowed in here." name="keywords">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
-    
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="css/font-awesome-ie7.css"><![endif]-->
-    
-    <!-- Shortcut Logos -->
-    <link href="file:///C|/Users/lcp/Documents/GitHub/deweb/images/demo_content/metroentrance1.jpg" rel="apple-touch-icon-precomposed" sizes="114x114">
-    <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/metroentrance57.jpg" rel="shortcut icon">
-    <!-- /Shortcut Logos -->
-    
-    <!-- Splash screens -->
-        <!-- iPhone 320x460 -->
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-        <!-- iPhone (Retina) 640x920 -->
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <!-- iPhone 5 640x1096-->
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <!-- iPad 768x1004 / 748x1024-->
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-        <!-- iPad (Retina) 1536x2008 / 1496x2048 -->
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <link href="file:///C|/Users/lcp/Documents/GitHub/metro/images/demo_content/splashscreens/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-  	<!-- / Splash Screens -->
+1) La spaziatura viene applicata solo al lato superiore e/o inferiore degli elementi di blocco. Agli elementi all'interno di questi blocchi viene applicata una spaziatura sui lati. In questo modo si evita ogni calcolo matematico relativo ai riquadri. Tenete presente che se aggiungete spaziatura laterale o bordi al blocco stesso, andranno ad aggiungersi alla larghezza definita per produrre la larghezza *totale*. Potete anche scegliere di rimuovere la spaziatura dell'elemento nell'elemento di blocco e inserire un secondo blocco al suo interno con larghezza nulla e con la spaziatura necessaria per la struttura che state creando.
 
-    
-    <link href='file:///C|/Users/lcp/Documents/GitHub/metro/css/style.css' id='styles-css' media='all' rel='stylesheet' type='text/css'><!-- General Style -->
-    
-    <!-- Scripts -->
-    <script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/jquery.easing.1.3.js'></script>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/bootstrap.min.js' type='text/javascript'></script>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/spinner.js' type='text/javascript'></script>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/jquery.mobile.customized.min.js' type='text/javascript'></script>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/vendor/modernizr-2.6.1.min.js' type='text/javascript'></script>
-    <!-- / Scripts -->
-    
-</head>
+2) Non è stato applicato alcun margine alle colonne perché sono tutte con float. Se dovete aggiungere un margine, evitate di applicarlo sul lato verso il quale avviene il float (ad esempio, un margine destro su un blocco impostato per un float verso destra). Spesso è possibile utilizzare una spaziatura come alternativa. Per i blocchi in cui questa regola deve essere ignorata, dovete aggiungere una dichiarazione "display:inline" alla regola dell'elemento di blocco per risolvere un bug di alcune versioni di Internet Explorer, a causa del quale il margine viene raddoppiato.
+
+3) Poiché le classi possono essere utilizzate più volte in un documento (e a un elemento possono essere applicate più classi), alle colonne sono stati assegnati dei nomi di classe anziché degli ID. Ad esempio, sarebbe possibile impilare due blocchi per barre laterali, se necessario. Potete tranquillamente sostituire i nomi con degli ID se preferite, a condizione che li utilizziate una sola volta per documento.
+
+4) Se preferite la barra di navigazione a sinistra anziché a destra, è sufficiente applicare alle colonne un float nella direzione opposta (tutte a sinistra anziché a destra) in modo da eseguirne il rendering in ordine inverso. Non è necessario spostare i blocchi all'interno del codice HTML.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background-color: #EADCAE;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 600px;
+	float: left;
+}
+aside {
+	float: left;
+	width: 180px;
+	background-color: #EADCAE;
+	padding: 10px 0;
+}
+
+/* ~~ Questo selettore raggruppato fornisce spazio agli elenchi dell'area .content ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /*  Questa spaziatura rispecchia la spaziatura destra nella regola di intestazione e paragrafo riportata sopra. La spaziatura è stata applicata al lato inferiore per garantire uno spazio tra gli altri elementi negli elenchi e a sinistra per creare il rientro. Può essere regolata a piacere.  */
+}
+
+/* ~~ Gli stili dell'elenco di navigazione (rimovibili se scegliete di utilizzare un menu flyout reimpostato come Spry) ~~ */
+ul.nav {
+	list-style: none; /*  Rimuove l'indicatore di elenco */
+	border-top: 1px solid #666; /*  Crea il bordo superiore dei collegamenti; tutti gli altri vengono posizionati utilizzando un bordo inferiore sul LI  */
+	margin-bottom: 15px; /*  Crea lo spazio tra gli elementi di navigazione nel contenuto sottostante  */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /*  Crea la separazione tra i pulsanti  */
+}
+ul.nav a, ul.nav a:visited { /*  Raggruppando questi selettori si fa in modo che i collegamenti mantengano l'aspetto di pulsante anche dopo che sono stati visitati  */
+	padding: 5px 5px 5px 15px;
+	display: block; /*  Specifica le proprietà block del collegamento facendo sì che riempia l'intero LI che lo contiene. Fa in modo che l'intera area risponda a un clic del mouse.  */
+	width: 160px;  /*Questa larghezza rende cliccabile l'intero pulsante in IE6. Se non avete bisogno di supportare IE6, può essere rimossa. Calcolate la larghezza corretta sottraendo la spaziatura di questo collegamento dalla larghezza del contenitore della barra laterale.  */
+	text-decoration: none;
+	background-color: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /*  Cambia il colore dello sfondo e del testo per la navigazione tramite mouse e tastiera  */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ Il piè di pagina ~~ */
+footer {
+	padding: 10px 0;
+	background-color: #CCC49F;
+	position: relative;/* fornisce hasLayout a IE6 per ottenere un clearing corretto */
+	clear: both; /* questa proprietà clear obbliga il .container a tenere conto di dove terminano le colonne e a contenerle */
+}
+/* ~~ Classi float/clear varie ~~ */
+.fltrt {  /* questa classe può essere utilizzata per applicare un float a un elemento a destra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* questa classe può essere utilizzata per applicare un float a un elemento a sinistra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* questa classe può essere inserita in un <br /> o in un blocco vuoto come elemento finale subito dopo l'ultimo blocco con float (all'interno del .container) se il footer viene rimosso o estratto dal .container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/*Supporto HTML 5 - Imposta nuovi tag HTML 5 per display:block in modo da indicare ai browser come eseguire il rendering corretto dei tag. */
+header, section, footer, aside, article, figure {
+	display: block;
+}
+-->
+</style><!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--></head>
 
 <body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
-    <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-    
-    <!-- Loading Message -->
-    <div class="spinnerbg">
-    <div id="spinner">
-        <span id="first" class="ball"></span>
-        <span id="second" class="ball"></span>
-        <span id="third" class="ball"></span>
-    </div>
-    </div>
 
-    <!-- /Loading Message -->
-	
-    <!-- Wrapper -->
-    <div class="wrapper">
-    	<!-- Scrollable -->
-    	<div class="scrollable">
-    	  <div class='tile white quadro-box image'>
-    	    <div class='boxContent'><img alt='' src='file:///C|/Users/lcp/Documents/GitHub/deweb/images/demo_content/metroentrance.jpg'></div>
-    	    <div class='tilename'>
-    	      <div class='name'></div>
-  	      </div>
-  	    </div>
-        
-    	  <!-- Webbu Tiles -->
-        <div class="webbutiles">
-        <!-- Quadro Horizontal / Quadro Vertical Tile Sample -->
-        <div class='tile white double-box'>
-          <div class='boxContent cameracontainer camera_wrap' style='padding:0px;'>
-            <!-- Slider Image 1 -->
-            <div data-src='images/demo_content/slider1.jpg'></div>
-            <!-- Slider Image 2 -->
-            <div data-src='images/demo_content/slider2.jpg'></div>
-            <!-- Slider Image 3 -->
-            <div data-src='images/demo_content/slider3.jpg'></div>
-          </div>
-        </div>
-        <!-- / Quadro Horizontal / Quadro Vertical Tile Sample --> 
-        
-		
-        <!-- Slider Tile Files -->
-		<script src='file:///C|/Users/lcp/Documents/GitHub/deweb/js/camera.js' type='text/javascript'></script> 
-        <link href='file:///C|/Users/lcp/Documents/GitHub/deweb/css/camera.css' id='camera-css' media='all' rel='stylesheet' type='text/css'>
-		<script>
-		jQuery(function(){jQuery('.cameracontainer').camera({height: 'auto',loader: 'bar',pagination: false,thumbnails: false,time: 5000,transPeriod: 1500,});});
-        </script>
-		<!-- / Slider Tile Files -->
-        
-        
-        <!-- Slider Tile Sample / Double Horizontal Tile Sample (double-box) = double H / Double v Box--><!-- Slider Tile Sample End -->
-        
-        
-        <!-- Blue Tile Sample --><!-- / Blue Tile Sample -->
-
-
-        <!-- Dark Green Tile Sample --><!-- / Dark Green Tile Sample -->
-        
-        
-        <!-- Orange Tile Sample -->
-        <a class='tile TOrange double iconmain' href=http://home.station.it/vetrotec-configuratore-test/HTML/canvas-design.html '>
-        <div class='boxContent'>
-        	<!-- Tile Icon -->
-        	<i class=''></i>
-        </div>
-           
-        <div class='tilename'>
-             <!-- Tile Name -->
-            <div class='name'><strong>Vai al Canvas Vetrotec</strong></div>
-        </div>
-        </a><!-- / Orange Tile Sample -->
-        
-        
-        <!-- Dark Purple Tile Sample --><!-- / Dark Purple Tile Sample -->
-        
-        
-        <!-- Dark Blue Tile --><!-- /Dark Blue Tile -->
-        
-        
-        <!-- Dark Red Tile --><!-- / Dark Red Tile -->
-        
-        
-        <!-- Twitter Blue Tile --><!-- / Twitter Blue Tile -->
-        
-        
-        <!-- Green Tile --><!-- / Green Tile -->
-        
-        
-        <!-- Brown Tile --><!-- / Brown Tile -->
-        
-        
-        <!-- Image Tile Sample--><!-- / Image Tile Sample-->
-        
-        
-        <!-- Facebook Blue Tile Sample--><!-- / Facebook Blue Tile Sample-->
-        
-        
-        <!-- Dark Grey Tile Sample--><!-- / Dark Grey Tile Sample-->
-        
-        
-        <!-- Dark Purple Tile Sample / Phone Call Link --><!-- / Dark Purple Tile Sample / Phone Call Link -->
-        
-        
-        <!-- Thumblr Blue Tile Sample / Mail Link --><!-- / Thumblr Blue Tile Sample / Mail Link -->
-        
-		
-        <!-- Facebook Tile Sample --><!-- / Facebook Tile Sample -->
-        
-        
-        <!-- Twitter Tile Sample --><!-- /Twitter Tile Sample -->
-        
-		
-        <!-- Google Plus Tile Sample --><!-- / Google Plus Tile Sample -->
-        
-        
-        <!-- Linked In Tile Sample --><!-- / Linked In Tile Sample -->
-        
-        
-        
-        <!-- Map Tile Tile Sample--><!-- / Map Tile Tile Sample-->
-        
-        
-        
-        <!-- Youtube Video Tile Tile Sample--><!-- / Youtube Video Tile Tile Sample-->
-        
-        
-        <!-- Vimeo Video Tile Tile Sample--><!-- / Vimeo Video Tile Tile Sample-->
-        
-        
-        
-        <!-- TLightPurple Tile --><!-- / TLightPurple Tile -->
-        
-        
-        
-        
-        <!-- TLightOrange Tile --><!-- / TLightOrange Tile -->
-        
-        
-       </div>
-       <!-- / Webbu Tiles -->
-       </div>
-       <!-- / Scrollable -->
-    </div>
-	<!-- / Wrapper -->
-    
-    
-	<script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/loadanim.js' type='text/javascript'></script><!-- Loading Animation -->
-	<script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/main.js' type='text/javascript'></script><!-- Main Styles -->
-	<script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/vendor/zepto.min.js' type='text/javascript'></script>
-    
-    <!-- Add home bubble -->
-    <link href='file:///C|/Users/lcp/Documents/GitHub/metro/css/add2home.css' id='add2home-css' media='all' rel='stylesheet' type='text/css'>
-    <script src='file:///C|/Users/lcp/Documents/GitHub/metro/js/add2home.js' type='text/javascript'></script>
-    <!-- / Add home bubble -->
-    
-    
-    <!--  Google Analytic Code for use
-    <script>
-    var _gaq=[['_setAccount','0'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-    -->
-    
+<div class="container">
+  <header></header>
+  <div class="sidebar1">
+    <ul class="nav">
+        <ul>
+          <li><a href="http://home.station.it/vetrotec-configuratore-test/HTML/canvas-design.html">Vai Al sito</a>
+        </ul>
+        <li><a href="http://www.lineanet.it">Esci</a></li>
+        <li></li>
+    </ul>
+    <aside>
+      <p><!-- end .sidebar1 --></p>
+    </aside>
+  </div>
+  <img src="log.jpg" width="160" height="160">
+  <article class="content">
+    <h1>Istruzioni</h1>
+    <section>
+     <h2><a href="http://home.station.it/vetrotec-configuratore-test/HTML/canvas-design.html"><img src="images/demo_content/metroentrance.jpg" width="543" height="547"></a></h2>
+</section>
+    <section>
+      <h2>&nbsp;</h2>
+    </section>
+    <section> </section>
+  <!-- end .content --></article>
+  <aside>
+    <h4>&nbsp;</h4>
+  </aside>
+  <footer>
+    <p>Questo footer contiene la dichiarazione position:relative; per fornire hasLayout a Internet Explorer 6 per il footer e determinarne il clearing corretto. Se non dovete supportare IE6, potete rimuoverlo.</p>
+    <address>
+      Contenuto indirizzo
+    </address>
+  </footer>
+  <!-- end .container --></div>
 </body>
 </html>
